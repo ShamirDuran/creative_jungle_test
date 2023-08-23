@@ -31,6 +31,7 @@ export const usePosts = () => {
 
   const removePost = (id: string) => {
     setPosts((prev) => prev.filter((post) => post.id.toString() !== id))
+    setFilteredPosts((prev) => prev.filter((post) => post.id.toString() !== id))
     toast.success(`Se elimito el post con id ${id}`)
   }
 

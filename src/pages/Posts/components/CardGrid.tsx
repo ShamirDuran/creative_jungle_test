@@ -26,10 +26,12 @@ export const CardGrid = () => {
   }
 
   return (
-    <div className='home__card_grid container'>
-      {posts.map((post) => (
-        <Card key={post.id} post={post} />
-      ))}
+    <div className='container' style={{ width: '100%', flex: 1 }}>
+      <div className='home__card_grid'>
+        {posts.map((post) => (
+          <Card key={post.id} post={post} />
+        ))}
+      </div>
     </div>
   )
 }

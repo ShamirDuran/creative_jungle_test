@@ -10,6 +10,7 @@
   justify-content: center;
   width: 100%;
   justify-items: center;
+  flex: 1;
 }
 
 .home__card {
