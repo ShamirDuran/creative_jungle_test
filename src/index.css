@@ -39,3 +39,7 @@ code {
   /* Microsoft Edge */
   color: var(--light-gray);
 }
+
+.container {
+  max-width: 1200px;
+}

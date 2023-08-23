@@ -1,5 +1,7 @@
+import { useContext } from 'react'
 import SearchIcon from '../assets/icons/iconamoon_search.svg'
 import { useTheme } from '../hooks'
+import { PostsContext } from '../pages/Posts'
 
 /**
  * Componente que renderiza el input de búsqueda
@@ -7,6 +9,7 @@ import { useTheme } from '../hooks'
  */
 export const InputFilter = () => {
   const { theme } = useTheme()
+  const { filterPostsById } = useContext(PostsContext)
 
   const styles: Record<string, React.CSSProperties> = {
     container: {
@@ -19,19 +22,16 @@ export const InputFilter = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'flex-end',
-      width: 320,
-      height: 46,
       position: 'relative',
       padding: '0 15px',
-      margin: '24px 0px',
     },
     input: {
       border: 0,
       outline: 'none',
-      width: '100%',
       fontSize: 15,
+      flex: 1,
       marginRight: 5,
-      color: theme.colors.lightGray,
+      width: '100%',
     },
     iconButton: {
       border: 0,
@@ -40,8 +40,14 @@ export const InputFilter = () => {
   }
 
   return (
-    <div style={styles.container}>
-      <input type='text' placeholder='Buscar' style={styles.input} />
+    <div style={styles.container} className='input_search'>
+      <input
+        type='text'
+        placeholder='Buscar'
+        style={styles.input}
+        onChange={(e) => filterPostsById(e.target.value)}
+      />
+
       <button style={styles.iconButton}>
         <img src={SearchIcon} alt='Search icon' />
       </button>

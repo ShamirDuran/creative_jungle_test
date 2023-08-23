@@ -14,8 +14,8 @@ const initialTheme: Theme = {
     secondary: '#1B6B93',
 
     // additional colors
-    lightBlue: '#4FC0D0',
-    lightGreen: '#B8E0D2',
+    lightBlue: '#d6eaf8',
+    lightGreen: '#a2ff86',
     lightGray: '#C5C5C5',
   },
 }
@@ -27,7 +27,7 @@ export const ThemeContext = createContext<ThemeContextType>({
 
 // Proveedor de tema que envuelve la aplicación
 export const ThemeProvider = ({ children }: { children: JSX.Element }) => {
-  const [theme, setTheme] = useState<Theme>(initialTheme)
+  const [theme, setTheme] = useState(initialTheme)
 
   const updateTheme = (updatedTheme: Partial<Theme>) => {
     setTheme((prevTheme) => ({

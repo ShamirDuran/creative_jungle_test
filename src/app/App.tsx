@@ -1,10 +1,10 @@
 import { ThemeProvider } from '../context'
-import { HomePage } from '../pages'
+import { PostsPage } from '../pages'
 
 const App = () => {
   return (
     <ThemeProvider>
-      <HomePage />
+      <PostsPage />
     </ThemeProvider>
   )
 }
