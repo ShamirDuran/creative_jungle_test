@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { PostApi } from '../api'
 import { Post } from '../api/models'
+import { toast } from 'sonner'
 
 export const usePosts = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -30,6 +31,7 @@ export const usePosts = () => {
 
   const removePost = (id: string) => {
     setPosts((prev) => prev.filter((post) => post.id.toString() !== id))
+    toast.success(`Se elimito el post con id ${id}`)
   }
 
   /// Función para manejar el cambio de valor del filtro, con un retraso de 2.5 segundos
