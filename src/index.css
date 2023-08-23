@@ -1,15 +1,41 @@
 * {
   box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+:root {
+  --primary: #164b60;
+  --secondary: #1b6b93;
+  --light-blue: #d6eaf8;
+  --light-green: #a2ff86;
+  --light-gray: #c5c5c5;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--light-gray);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--light-gray);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--light-gray);
 }
